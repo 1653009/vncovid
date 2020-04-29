@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.icon-marker {
   display: flex;
-  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 15px;
+  height: 15px;
+  font-weight: bold;
+  background-color: #c62828;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px black;
+}
+
+.icon-marker:hover .icon-marker-tooltip{
+  display: block;
+}
+.playbtn {
+  background-color: seagreen;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+  border-radius: 1rem;
+}
+.pausebtn {
+  background-color: lightsalmon;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.icon-marker-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  width: 300px;
+  font-size: 1.4em;
+  background-color: #263238;
+  border-radius: .4em;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 5px rgba(black, .9);
+}
+
+.icon-marker-tooltip ul,p {
+  font-weight: normal;
+}
+
+.icon-marker-tooltip ul {
+  text-align: left;
+  padding: 10px;
+  margin: .6em 0 0;
+}
+
+.list-item {
+  display: block;
+  clear: both;
+  border:3px solid #ED4264;
+  box-shadow: 3px 5px #ED4264;
+  border-radius:  0rem 5rem 5rem 5rem;
+  margin:10px;
+  counter-increment: list;
+  padding-bottom: 4rem;
+  font-size: 1.1rem;
+  line-height: 1.375;
+  position: relative;
+}
+
+.list {
+  width:40%;
+  height: 495px;
+  overflow-y: scroll;
+  position: absolute;
+  left: 800px;
+}
+
+#map{
+  position: absolute;
+}
+
+.container{
+  position: relative;
+}
+.seekbar-layout {
+  position: absolute;
+  width: 55%;
+  top: 430px;
+  left: 30px;
+}
+.Patient{
+  position: absolute;
+  width: 55%;
+  top: 500px;
+  left: 30px;
+  z-index: "Địa điểm chọn" !important;
+}
+#play-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 650px;
+  right: 150px;
+}
+
+/*------------------------*/
+
+.item {
+  display: block;
+  clear: both;
+  counter-increment: list;
+  padding-bottom: 4rem;
+  font-size: 1.1rem;
+  line-height: 1.375;
+  position: relative;
+}
+
+:root {
+  --bg: #fdfdfd;
+  --highlight1: #ED4264;
+  --highlight2: #FFEDBC;
+  --color: #1a1e24;
+  --font-number: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+  --font-head: "Space Mono", Consolas, Menlo, Monaco, "Courier New", monospace;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.list-item:before {
+  font: bold 2.25rem/1 var(--font-number);
+  content: counter(list);
+  width: 5rem;
+  height: 5rem;
+  float: left;
+  margin: 0 1.5rem 0.75rem 0;
+  color: var(--bg);
+  background: var(--highlight1) linear-gradient(to bottom right, var(--highlight1) 25%, var(--highlight2));
+  text-shadow: 0 0 2px var(--highlight1);
+  border-radius: 50%;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  shape-outside: ellipse();
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+
+.list-item:after {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: var(--highlight1);
+  z-index: -1;
+  border-top-left-radius: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
